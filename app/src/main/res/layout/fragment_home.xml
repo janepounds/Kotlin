@@ -10,7 +10,9 @@
         tools:context="HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f8f8ff">
+        android:background="#f8f8ff"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -50,8 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="18dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="20dp">
 
         <RelativeLayout
             android:id="@+id/layout_sports_categories"
@@ -64,6 +67,7 @@
             android:layout_marginRight="5dp">
 
             <LinearLayout
+                android:id="@+id/categories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -83,6 +87,14 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/categories_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_sports_24"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:layout_below="@id/categories"/>
 
 
         </RelativeLayout>
@@ -98,6 +110,7 @@
             android:layout_marginLeft="5dp">
 
             <LinearLayout
+                android:id="@+id/appnt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -116,8 +129,14 @@
                     android:layout_marginBottom="5dp"/>
 
             </LinearLayout>
-
-
+            <ImageView
+            android:id="@+id/text_debit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_schedule_24"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_below="@id/appnt"/>
 
 
         </RelativeLayout>
@@ -131,8 +150,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="18dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="20dp">
 
         <RelativeLayout
             android:id="@+id/layout_coaches"
@@ -145,6 +165,7 @@
             android:layout_marginRight="5dp">
 
             <LinearLayout
+                android:id="@+id/coach"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -163,7 +184,14 @@
                     android:layout_marginBottom="5dp"/>
 
             </LinearLayout>
-
+            <ImageView
+                android:id="@+id/caoches_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_people_24"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:layout_below="@id/coach"/>
 
         </RelativeLayout>
 
@@ -178,6 +206,7 @@
             android:layout_marginLeft="5dp">
 
             <LinearLayout
+                android:id="@+id/rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -196,7 +225,14 @@
                     android:layout_marginBottom="5dp"/>
 
             </LinearLayout>
-
+            <ImageView
+                android:id="@+id/images_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_star_rate_24"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:layout_below="@id/rating"/>
 
 
         </RelativeLayout>

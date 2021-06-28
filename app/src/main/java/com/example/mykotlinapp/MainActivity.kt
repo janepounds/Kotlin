@@ -23,31 +23,36 @@ class MainActivity : AppCompatActivity() {
     lateinit var actionBar: ActionBar
     lateinit var fragmentManager: FragmentManager
     lateinit var toolbar:Toolbar
+    lateinit var bottomNavigationView:BottomNavigationView
+    lateinit var navHostFragment:NavHostFragment
+    lateinit var navController:NavController
 
 
-    private val bottomNavigationView by lazy {
-        findViewById<BottomNavigationView>(R.id.bottom_navigation)
-    }
 
-    private val navHostFragment by lazy {
-        supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-    }
+
+//    private val navHostFragment by lazy {
+//        supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( R.layout.activity_main)
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
         fragment_container =findViewById(R.id.nav_host_fragment)
         fragmentManager = supportFragmentManager
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
         toolbar = findViewById(R.id.main_toolbar)
         context = applicationContext
         setUpNavigation()
         setSupportActionBar(toolbar)
+        toolbar.title = "Flash Sports"
         actionBar = supportActionBar!!
-        actionBar.setDisplayShowTitleEnabled(false)
+        actionBar.setDisplayShowTitleEnabled(true)
         actionBar.setHomeButtonEnabled(false)
         actionBar.setDisplayHomeAsUpEnabled(false)
-//        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
     }
 
@@ -62,9 +67,9 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.accountFragment2 -> {
-                    currentDestination =  Navigation.findNavController(navHostFragment.requireView()).currentDestination!!.id
-                    if (currentDestination == R.id.accountFragment2)
-                        Navigation.findNavController(navHostFragment.requireView()).navigate(R.id.action_navigation_home_to_accountFragment2)
+//                    currentDestination =  Navigation.findNavController(navHostFragment.requireView()).currentDestination!!.id
+//                    if (currentDestination == R.id.accountFragment2)
+//                        Navigation.findNavController(navHostFragment.requireView()).navigate(R.id.action_navigation_home_to_accountFragment2)
                 }
 
 
@@ -74,19 +79,19 @@ class MainActivity : AppCompatActivity() {
 //            bottomNavigationView.selectedItemId = destination.id
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
-
-    override fun onBackPressed() {
-        if (Navigation.findNavController(navHostFragment.requireView()).currentDestination!!.id!=R.id.navigation_home) {
-            // Pop previous Fragment
-            Navigation.findNavController(navHostFragment.requireView()).popBackStack();
-
-        }else{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        onBackPressed()
+//        return true
+//    }
+//
+//    override fun onBackPressed() {
+//        if (Navigation.findNavController(navHostFragment.requireView()).currentDestination!!.id!=R.id.navigation_home) {
+//            // Pop previous Fragment
+//            Navigation.findNavController(navHostFragment.requireView()).popBackStack();
+//
+//        }else{
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 }
