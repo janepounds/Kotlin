@@ -19,7 +19,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     lateinit var fragment_container: FragmentContainerView
-    lateinit var navController: NavController
     lateinit var context:Context
     lateinit var actionBar: ActionBar
     lateinit var fragmentManager: FragmentManager

@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
@@ -19,12 +20,14 @@
 
 
         </androidx.appcompat.widget.Toolbar>
+
         <fragment
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="false"
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
             app:navGraph="@navigation/main_navigation" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
