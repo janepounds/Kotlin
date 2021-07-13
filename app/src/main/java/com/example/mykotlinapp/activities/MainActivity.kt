@@ -1,18 +1,17 @@
-package com.example.mykotlinapp
+package com.example.mykotlinapp.activities
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.mykotlinapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView( R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         fragment_container =findViewById(R.id.nav_host_fragment)
         fragmentManager = supportFragmentManager
